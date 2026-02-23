@@ -1,0 +1,14 @@
+{
+  "NavPage": {
+    "notif": "Notification",
+    "login": "Sign In"
+  },
+
+  "ModalLanguages": {
+    "title_country": "COUNTRY/REGION",
+    "country": "Amerika Serikat",
+    "title_language": "LANGUAGE",
+    "language": "English - EN",
+    "button": "Confirm"
+  }
+}

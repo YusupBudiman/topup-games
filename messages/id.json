@@ -1,0 +1,14 @@
+{
+  "NavPage": {
+    "notif": "Notifikasi",
+    "login": "Masuk"
+  },
+
+  "ModalLanguages": {
+    "title_country": "NEGARA/WILAYAH",
+    "country": "Indonesia",
+    "title_language": "BAHASA",
+    "language": "Bahasa Indonesia - ID",
+    "button": "Konfirmasi"
+  }
+}
