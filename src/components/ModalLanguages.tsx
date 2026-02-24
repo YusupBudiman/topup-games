@@ -41,15 +41,15 @@ export default function ModalLanguages({ close }: { close?: () => void }) {
     <div
       onClick={handleClose}
       className={`
-    fixed inset-0 z-50 w-full h-screen flex flex-col justify-end md:justify-center md:items-center
-    transition-all duration-300 safe-bottom
+    fixed inset-0 z-50 flex flex-col justify-end md:justify-center md:items-center
+    transition-all duration-300
     ${isVisible ? "bg-black/40 pointer-events-auto" : "bg-transparent pointer-events-none"}`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
         className={`
     relative flex flex-col justify-between bg-[#101424] 
-    w-full h-[90%] rounded-t-xl
+    w-full h-8/9 rounded-t-xl
     md:w-200 md:h-[80%] md:max-w-[80%] md:rounded-2xl 
     
     ${isVisible ? "translate-y-0" : "translate-y-full"}
@@ -153,7 +153,7 @@ export default function ModalLanguages({ close }: { close?: () => void }) {
         <div
           className={`
             flex items-center justify-center w-full border-t border-[#1b1f32] p-4 
-            pb-[env(safe-area-inset-bottom)]`}
+            `}
         >
           <button
             onClick={handleChangeLocale}
