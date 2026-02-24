@@ -1,13 +1,32 @@
 {
-  "NavPage": {
+  "NavItems": {
+    "home": "ホーム",
+    "event": "ニュース",
+    "help": "ヘルプセンター",
+    "live": "ライブ・動画",
+    "settings": "アカウントとセキュリティ",
+    "order": "注文センター",
+    "coupon": "クーポン",
     "notif": "通知",
     "login": "ログイン"
   },
+
+  "VipCard": {
+    "title": "Ysbuy VIP",
+    "desc": "VIPになって特別な特典をお楽しみください",
+    "button": "ログイン / 新規登録",
+    "desc_btn": "ログインして限定サービスをお楽しみください"
+  },
+
   "ModalLanguages": {
     "title_country": "国/地域",
     "country": "日本",
     "title_language": "言語",
     "language": "日本語 - JA",
     "button": "確認"
+  },
+
+  "Footer": {
+    "title_sidebar": "Ysbuy公式チャージストア"
   }
 }

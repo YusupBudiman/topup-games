@@ -1,13 +1,32 @@
 {
-  "NavPage": {
-    "notif": "消息",
+  "NavItems": {
+    "home": "首页",
+    "event": "新闻",
+    "help": "帮助中心",
+    "live": "直播与视频",
+    "settings": "账户与安全",
+    "order": "订单中心",
+    "coupon": "优惠券",
+    "notif": "通知",
     "login": "登录"
   },
+
+  "VipCard": {
+    "title": "Ysbuy VIP",
+    "desc": "成为VIP，享受专属特权",
+    "button": "登录 / 注册",
+    "desc_btn": "登录以享受专属服务"
+  },
+
   "ModalLanguages": {
     "title_country": "国家/地区",
     "country": "中国",
     "title_language": "语言",
     "language": "简体中文 - ZH",
     "button": "确认"
+  },
+
+  "Footer": {
+    "title_sidebar": "Ysbuy官方充值商店"
   }
 }

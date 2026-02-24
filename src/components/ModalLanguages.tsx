@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Languages } from "../data/languages";
 import { getLanguage } from "../i18n/locale";
 import { IoClose } from "react-icons/io5";
@@ -16,7 +16,21 @@ export default function ModalLanguages({ close }: { close?: () => void }) {
   const pathname = usePathname();
 
   const selectedLang = getLanguage(selected);
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      setIsVisible(true);
+    });
+    return () => cancelAnimationFrame(id);
+  }, []);
+
+  const handleClose = () => {
+    setIsVisible(false);
+    setTimeout(() => {
+      close?.();
+    }, 300);
+  };
   // change locale and close modal
   const handleChangeLocale = () => {
     router.replace(pathname, { locale: selected });
@@ -24,12 +38,22 @@ export default function ModalLanguages({ close }: { close?: () => void }) {
   };
 
   return (
-    <div className=" fixed inset-0 z-50 w-full h-screen bg-black/40 flex flex-col justify-end md:justify-center md:items-center">
+    <div
+      onClick={handleClose}
+      className={`
+    fixed inset-0 z-50 w-full h-screen flex flex-col justify-end md:justify-center md:items-center
+    transition-all duration-300
+    ${isVisible ? "bg-black/40 pointer-events-auto" : "bg-transparent pointer-events-none"}`}
+    >
       <div
+        onClick={(e) => e.stopPropagation()}
         className={`
     relative flex flex-col justify-between bg-[#101424] 
     w-full h-[90%] rounded-t-xl
     md:w-200 md:h-[80%] md:max-w-[80%] md:rounded-2xl 
+    
+    ${isVisible ? "translate-y-0" : "translate-y-full"}
+    transition-transform duration-300
     `}
       >
         {/* Header */}
@@ -53,7 +77,7 @@ export default function ModalLanguages({ close }: { close?: () => void }) {
             </span>
           </div>
 
-          <button onClick={close}>
+          <button onClick={handleClose}>
             <IoClose className="text-xl text-[#868890] md:text-2xl" />
           </button>
         </div>

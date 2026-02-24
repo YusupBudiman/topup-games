@@ -1,7 +1,21 @@
 {
-  "NavPage": {
+  "NavItems": {
+    "home": "Beranda",
+    "event": "Berita",
+    "help": "Pusat Bantuan",
+    "live": "Langsung & Video",
+    "settings": "Akun dan Keamanan",
+    "order": "Pusat Pesanan",
+    "coupon": "Kupon",
     "notif": "Notifikasi",
     "login": "Masuk"
+  },
+
+  "VipCard": {
+    "title": "Ysbuy VIP",
+    "desc": "Menjadi VIP untuk menikmati hak istimewa",
+    "button": "Masuk/Daftar",
+    "desc_btn": "Masuk untuk Menikmati Layanan Eksklusif"
   },
 
   "ModalLanguages": {
@@ -10,5 +24,9 @@
     "title_language": "BAHASA",
     "language": "Bahasa Indonesia - ID",
     "button": "Konfirmasi"
+  },
+
+  "Footer": {
+    "title_sidebar": "Toko pengisian resmi oleh Ysbuy"
   }
 }

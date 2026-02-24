@@ -1,7 +1,21 @@
 {
-  "NavPage": {
-    "notif": "Notification",
+  "NavItems": {
+    "home": "Home",
+    "event": "News",
+    "help": "Help Center",
+    "live": "Live & Video",
+    "settings": "Account & Security",
+    "order": "Order Center",
+    "coupon": "Coupons",
+    "notif": "Notifications",
     "login": "Sign In"
+  },
+
+  "VipCard": {
+    "title": "Ysbuy VIP",
+    "desc": "Become a VIP to enjoy exclusive privileges",
+    "button": "Sign In / Register",
+    "desc_btn": "Sign in to enjoy exclusive services"
   },
 
   "ModalLanguages": {
@@ -10,5 +24,9 @@
     "title_language": "LANGUAGE",
     "language": "English - EN",
     "button": "Confirm"
+  },
+
+  "Footer": {
+    "title_sidebar": "Official top-up store by Ysbuy"
   }
 }

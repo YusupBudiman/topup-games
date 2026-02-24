@@ -1,4 +1,5 @@
 "use client";
+// components
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -6,14 +7,19 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { useLocale } from "next-intl";
 import { getLanguage } from "../i18n/locale";
 import ModalLanguages from "./ModalLanguages";
+import SidebarMobile from "./SidebarMobile";
+
+// icon
 import { HiOutlineUser } from "react-icons/hi2";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 export default function Navbar() {
-  const t = useTranslations("NavPage");
+  const t = useTranslations("NavItems");
+
   const locale = useLocale();
   const currentLang = getLanguage(locale);
   const [isOpen, setIsOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <nav className="z-49  text-white p-4 flex justify-between w-full h-12">
@@ -65,13 +71,16 @@ export default function Navbar() {
           <IoMdArrowDropdown className="text-xl md:inline hidden" />
         </button>
 
-        <div className="md:hidden cursor-pointer">
+        <button
+          onClick={() => setIsSidebarOpen(true)}
+          className="md:hidden cursor-pointer"
+        >
           <RxHamburgerMenu />
-        </div>
+        </button>
       </div>
 
-      {/* ✅ Conditional Rendering (SOLUSI UTAMA) */}
       {isOpen && <ModalLanguages close={() => setIsOpen(false)} />}
+      {isSidebarOpen && <SidebarMobile close={() => setIsSidebarOpen(false)} />}
     </nav>
   );
 }
