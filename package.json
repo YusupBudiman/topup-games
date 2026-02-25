@@ -12,7 +12,6 @@
   "dependencies": {
     "@prisma/adapter-pg": "^7.4.1",
     "@prisma/client": "^7.4.1",
-    "@sendinblue/client": "^3.3.1",
     "bcryptjs": "^3.0.3",
     "cookie": "^1.1.1",
     "dotenv": "^17.3.1",
@@ -24,8 +23,7 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "^5.5.0",
-    "resend": "^6.9.2",
-    "sib-api-v3-sdk": "^8.5.0"
+    "resend": "^6.9.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
