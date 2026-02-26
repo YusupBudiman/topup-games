@@ -8,6 +8,7 @@ import { useLocale } from "next-intl";
 import { getLanguage } from "../i18n/locale";
 import ModalLanguages from "./ModalLanguages";
 import SidebarMobile from "./SidebarMobile";
+import ModalAuth from "./ModalAuth";
 
 // icon
 import { HiOutlineUser } from "react-icons/hi2";
@@ -20,6 +21,7 @@ export default function Navbar() {
   const currentLang = getLanguage(locale);
   const [isOpen, setIsOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
 
   return (
     <nav className="z-49  text-white p-4 flex justify-between w-full h-12">
@@ -62,7 +64,9 @@ export default function Navbar() {
             </div>
           )}
         </button>
+
         <button
+          onClick={() => setIsAuthOpen(true)}
           className="bg-white/20 backdrop-blur px-2 py-1 rounded-full text-xs
         md:bg-transparent flex items-center gap-1 hover:text-blue-400"
         >
@@ -78,9 +82,9 @@ export default function Navbar() {
           <RxHamburgerMenu />
         </button>
       </div>
-
       {isOpen && <ModalLanguages close={() => setIsOpen(false)} />}
       {isSidebarOpen && <SidebarMobile close={() => setIsSidebarOpen(false)} />}
+      {isAuthOpen && <ModalAuth close={() => setIsAuthOpen(false)} />}
     </nav>
   );
 }
