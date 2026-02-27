@@ -8,7 +8,8 @@
     "order": "Order Center",
     "coupon": "Coupons",
     "notif": "Notifications",
-    "login": "Sign In"
+    "login": "Sign In",
+    "logout": "Logout"
   },
 
   "VipCard": {
@@ -24,6 +25,27 @@
     "title_language": "LANGUAGE",
     "language": "English - EN",
     "button": "Confirm"
+  },
+
+  "SchemaAuth": {
+    "title_auth": "Sign In or Register",
+    "or": "Or",
+    "message_login": "Login Successful",
+    "message_email": "Email is required!",
+    "message_password": "Password is required!",
+    "message_username": "Username is required!",
+    "label_email": "Email",
+    "label_password": "Password",
+    "label_username": "Username",
+    "label_register_passkey": "Register with Passkey",
+    "label_login_passkey": "Login",
+    "desc_login_passkey": "Make sure you already have a passkey.",
+    "btn_email": "Continue",
+    "btn_password": "Sign In",
+    "btn_register": "Register",
+    "loading": "Loading...",
+    "err_data": "An error occurred",
+    "err_password": "Incorrect password"
   },
 
   "Footer": {

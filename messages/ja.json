@@ -8,7 +8,8 @@
     "order": "注文センター",
     "coupon": "クーポン",
     "notif": "通知",
-    "login": "ログイン"
+    "login": "ログイン",
+    "logout": "ログアウト"
   },
 
   "VipCard": {
@@ -24,6 +25,27 @@
     "title_language": "言語",
     "language": "日本語 - JA",
     "button": "確認"
+  },
+
+  "SchemaAuth": {
+    "title_auth": "ログインまたは新規登録",
+    "or": "または",
+    "message_login": "ログインに成功しました",
+    "message_email": "メールアドレスは必須です！",
+    "message_password": "パスワードは必須です！",
+    "message_username": "ユーザー名は必須です！",
+    "label_email": "メールアドレス",
+    "label_password": "パスワード",
+    "label_username": "ユーザー名",
+    "label_register_passkey": "パスキーで登録",
+    "label_login_passkey": "ログイン",
+    "desc_login_passkey": "事前にパスキーを作成していることを確認してください。",
+    "btn_email": "続行",
+    "btn_password": "ログイン",
+    "btn_register": "登録",
+    "loading": "読み込み中...",
+    "err_data": "エラーが発生しました",
+    "err_password": "パスワードが間違っています"
   },
 
   "Footer": {

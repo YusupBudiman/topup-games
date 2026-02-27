@@ -8,7 +8,8 @@
     "order": "Pusat Pesanan",
     "coupon": "Kupon",
     "notif": "Notifikasi",
-    "login": "Masuk"
+    "login": "Masuk",
+    "logout": "Keluar"
   },
 
   "VipCard": {
@@ -26,6 +27,26 @@
     "button": "Konfirmasi"
   },
 
+  "SchemaAuth": {
+    "title_auth": "Masuk atau Daftar",
+    "or": "Atau",
+    "message_login": "Login Berhasil",
+    "message_email": "email harus diisi!",
+    "message_password": "password harus diisi!",
+    "message_username": "username harus diisi!",
+    "label_email": "Email",
+    "label_password": "Password",
+    "label_username": "Username",
+    "label_register_passkey": "Daftar dengan passkey",
+    "label_login_passkey": "Login",
+    "desc_login_passkey": "Pastikan Anda Sudah Memiliki Passkey.",
+    "btn_email": "Lanjutkan",
+    "btn_password": "Masuk",
+    "btn_register": "Daftar",
+    "loading": "Memuat...",
+    "err_data": "Terjadi Kesalahan",
+    "err_password": "Password Salah"
+  },
   "Footer": {
     "title_sidebar": "Toko pengisian resmi oleh Ysbuy"
   }
