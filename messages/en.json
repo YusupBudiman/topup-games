@@ -30,6 +30,7 @@
   "SchemaAuth": {
     "title_auth": "Sign In or Register",
     "or": "Or",
+    "message_verify": "Email Verification",
     "message_login": "Login Successful",
     "message_email": "Email is required!",
     "message_password": "Password is required!",

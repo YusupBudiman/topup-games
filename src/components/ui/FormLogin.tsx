@@ -72,7 +72,6 @@ export default function FormLogin({
           password: data.password,
         });
 
-        toast.success(authT("message_login"));
         await getUser();
 
         onLogin?.(emailValue);

@@ -30,6 +30,7 @@
   "SchemaAuth": {
     "title_auth": "Masuk atau Daftar",
     "or": "Atau",
+    "message_verify": "Verifikasi Email",
     "message_login": "Login Berhasil",
     "message_email": "email harus diisi!",
     "message_password": "password harus diisi!",

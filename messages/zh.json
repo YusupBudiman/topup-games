@@ -30,6 +30,7 @@
   "SchemaAuth": {
     "title_auth": "登录或注册",
     "or": "或",
+    "message_verify": "邮箱验证",
     "message_login": "登录成功",
     "message_email": "请输入邮箱！",
     "message_password": "请输入密码！",

@@ -34,9 +34,9 @@ export default function ModalAuth({ close }: { close?: () => void }) {
     >
       <div
         className={`
-          custom-scroll relative flex flex-col gap-5 justify-between bg-[#101424] w-full h-full p-4 overflow-y-auto 
+          custom-scroll relative flex flex-col gap-5 justify-between bg-[#101424] w-full h-full p-4 overflow-x-hidden overflow-y-auto 
           
-          md:w-1/2 md:h-auto md:max-h-[90%] md:rounded-2xl md:px-12 md:py-8
+          md:w-1/2 md:h-[90%] md:rounded-2xl md:px-12 md:py-8
 
           2xl:w-1/3
     
@@ -184,9 +184,9 @@ export default function ModalAuth({ close }: { close?: () => void }) {
             )}
           </>
         ) : (
-          <div className="flex flex-col items-center justify-center gap-3">
+          <div className="h-full flex flex-col items-center justify-center gap-3">
             <h1 className="z-10 text-white font-bold text-2xl mt-2 uppercase ">
-              {authT("message_login")}
+              {authT("message_verify")}
             </h1>
             <p className="text-gray-400 text-sm">{email}</p>
           </div>

@@ -30,6 +30,7 @@
   "SchemaAuth": {
     "title_auth": "ログインまたは新規登録",
     "or": "または",
+    "message_verify": "メール確認",
     "message_login": "ログインに成功しました",
     "message_email": "メールアドレスは必須です！",
     "message_password": "パスワードは必須です！",
