@@ -14,7 +14,7 @@ export default function BtnSubmit({ children, className, ...props }: Props) {
         hover:from-[#68d6f7] hover:to-[#3b6aee]
         active:from-[#0a89c0] active:to-[#072bc1]
         disabled:opacity-50 disabled:cursor-not-allowed
-        md:w-1/4
+        
         ${className}
       `}
     >

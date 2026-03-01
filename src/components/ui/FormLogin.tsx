@@ -6,6 +6,7 @@ import axios from "axios";
 import BtnSubmit from "./BtnSubmit";
 import { useTranslations } from "next-intl";
 import { toast } from "react-toastify";
+import { useAuth } from "@/src/context/AuthContext";
 
 type FormValues = {
   email: string;
@@ -29,6 +30,7 @@ export default function FormLogin({
   const [emailValue, setEmailValue] = useState("");
   const [loading, setLoading] = useState(false);
   const authT = useTranslations("SchemaAuth");
+  const { getUser } = useAuth();
 
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
@@ -59,6 +61,7 @@ export default function FormLogin({
           },
           { withCredentials: true },
         );
+        await getUser();
 
         onLogin?.(emailValue);
       } else if (step === "register") {
@@ -70,6 +73,8 @@ export default function FormLogin({
         });
 
         toast.success(authT("message_login"));
+        await getUser();
+
         onLogin?.(emailValue);
       }
     } catch (err: unknown) {
@@ -88,27 +93,29 @@ export default function FormLogin({
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-full flex flex-col gap-3"
+      className="w-full flex flex-col gap-5"
     >
       {/* STEP EMAIL */}
       {step === "email" && (
-        <>
+        <div className="flex flex-col gap-1 text-gray-300">
           <label>{authT("label_email")}</label>
-          <input
-            {...register("email", { required: authT("message_email") })}
-            className="bg-transparent border border-gray-700 rounded-md p-2"
-            placeholder={authT("label_email")}
-          />
+          <div className="p-px bg-linear-to-br from-[#03b8d2] to-[#1c53ef] rounded-lg">
+            <input
+              {...register("email", { required: authT("message_email") })}
+              className="w-full bg-[#1c2236]  rounded-lg p-2 text-white focus:outline-none focus:ring-0"
+              placeholder={authT("label_email")}
+            />
+          </div>
           {errors.email && (
             <p className="text-red-400 text-xs">{errors.email.message}</p>
           )}
-        </>
+        </div>
       )}
 
       {/* STEP LOGIN */}
       {step === "login" && (
-        <>
-          <p className="text-xs text-gray-400">{emailValue}</p>
+        <div className="flex flex-col gap-1">
+          <p className="text-xs text-gray-400 text-center">{emailValue}</p>
 
           <label>{authT("label_password")}</label>
           <input
@@ -122,7 +129,7 @@ export default function FormLogin({
           {errors.password && (
             <p className="text-red-400 text-xs">{errors.password.message}</p>
           )}
-        </>
+        </div>
       )}
 
       {/* STEP REGISTER */}

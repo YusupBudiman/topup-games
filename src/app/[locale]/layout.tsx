@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { routing } from "../../i18n/routing";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthProvider } from "@/src/context/AuthContext";
 
 type Props = {
   children: React.ReactNode;
@@ -18,18 +19,22 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
-  // Enable static rendering
   setRequestLocale(locale);
 
-  // Load translation messages
   const messages = (await import(`../../../messages/${locale}.json`)).default;
 
   return (
     <html lang={locale}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ToastContainer position="top-right" autoClose={3000} theme="dark" />
-          {children}
+          <AuthProvider>
+            <ToastContainer
+              position="top-right"
+              autoClose={3000}
+              theme="dark"
+            />
+            {children}
+          </AuthProvider>
         </NextIntlClientProvider>
       </body>
     </html>
