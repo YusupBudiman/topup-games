@@ -5,11 +5,11 @@ import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { useState, useEffect, useRef } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { getLanguage } from "../i18n/locale";
-import ModalLanguages from "./ModalLanguages";
+import { getLanguage } from "../../i18n/locale";
+import ModalLanguages from "../modals/ModalLanguages";
 import SidebarMobile from "./SidebarMobile";
-import ModalAuth from "./ModalAuth";
-import { useAuth } from "../context/AuthContext";
+import ModalAuth from "../modals/ModalAuth";
+import { useAuth } from "../../context/AuthContext";
 
 // icon
 import { HiOutlineUser, HiOutlineBell } from "react-icons/hi2";
@@ -53,8 +53,8 @@ export default function Navbar() {
   return (
     <nav
       className="
-        z-49 text-white p-4 flex justify-between w-full h-12
-        lg:p-8
+        fixed  top-0 left-0 w-full h-12 z-49 text-white px-4 flex items-center justify-between
+        lg:h-16 lg:px-8 
       "
     >
       {/* Logo */}

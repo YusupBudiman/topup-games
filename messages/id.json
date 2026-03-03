@@ -48,7 +48,23 @@
     "err_data": "Terjadi Kesalahan",
     "err_password": "Password Salah"
   },
+
   "Footer": {
     "title_sidebar": "Toko pengisian resmi oleh Ysbuy"
-  }
+  },
+
+  "ContentEvent": [
+    {
+      "id": "1",
+      "desc_event": "Dapatkan hadiah tambahan untuk pembelian pertama koin Ysbuy setiap bulan"
+    },
+    {
+      "id": "2",
+      "desc_event": "Nikmati diskon eksklusif 5% hanya di Ysbuy"
+    },
+    {
+      "id": "3",
+      "desc_event": "Undang teman buat bantu & dapetin 20.000 token!!!"
+    }
+  ]
 }

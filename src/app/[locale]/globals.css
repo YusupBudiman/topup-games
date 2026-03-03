@@ -1,4 +1,10 @@
 @import "tailwindcss";
+/* Swiper CSS */
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/scrollbar";
+@import "swiper/css/effect-fade";
 
 :root {
   --background: #14182b;
@@ -37,4 +43,11 @@ body {
     caret-color: white;
     transition: background-color 9999s ease-in-out 0s;
   }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white; /* ganti warna panah */
+  width: 2rem; /* lebar panah */
+  height: 2rem; /* tinggi panah */
 }

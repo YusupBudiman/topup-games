@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 import { toast } from "react-toastify";
 import { useAuth } from "@/src/context/AuthContext";
 
-type FormValues = {
+type FormLogin = {
   email: string;
   username?: string;
   password?: string;
@@ -17,14 +17,14 @@ type FormValues = {
 export default function FormLogin({
   onLogin,
 }: {
-  onLogin?: (email: string) => void;
+  onLogin?: (email: string, stepLogin: string) => void;
 }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormValues>();
+  } = useForm<FormLogin>();
 
   const [step, setStep] = useState<"email" | "login" | "register">("email");
   const [emailValue, setEmailValue] = useState("");
@@ -32,7 +32,7 @@ export default function FormLogin({
   const authT = useTranslations("SchemaAuth");
   const { getUser } = useAuth();
 
-  const onSubmit = async (data: FormValues) => {
+  const onSubmit = async (data: FormLogin) => {
     setLoading(true);
 
     try {
@@ -63,7 +63,7 @@ export default function FormLogin({
         );
         await getUser();
 
-        onLogin?.(emailValue);
+        onLogin?.(emailValue, step);
       } else if (step === "register") {
         /** REGISTER **/
         await axios.post("/api/auth/register", {
@@ -74,15 +74,14 @@ export default function FormLogin({
 
         await getUser();
 
-        onLogin?.(emailValue);
+        onLogin?.(emailValue, step);
       }
     } catch (err: unknown) {
-      // log error backend (optional)
+      // log error backend
       if (axios.isAxiosError(err)) {
         console.log(err.response?.data);
       }
 
-      // tampilkan error generic
       toast.error(authT("err_data"), { toastId: "auth-error" });
     }
 

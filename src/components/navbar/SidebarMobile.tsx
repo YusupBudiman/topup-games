@@ -2,14 +2,14 @@
 
 import { useEffect, useState, useCallback, useMemo } from "react";
 import Image from "next/image";
-import { Link } from "../i18n/navigation";
+import { Link } from "../../i18n/navigation";
 import { useTranslations } from "next-intl";
-import Vipcard from "./ui/VipCard";
-import { navItems } from "../data/navItems";
-import ModalAuth from "./ModalAuth";
+import Vipcard from "../ui/VipCard";
+import { navItems } from "../../data/navItems";
+import ModalAuth from "../modals/ModalAuth";
 import AuthSection from "./AuthSection";
-import LogoutButton from "./ui/BtnLogout";
-import { useAuth } from "../context/AuthContext";
+import LogoutButton from "../ui/BtnLogout";
+import { useAuth } from "../../context/AuthContext";
 
 // icon
 import { IoMdClose } from "react-icons/io";

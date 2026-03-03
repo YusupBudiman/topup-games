@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Link } from "../i18n/navigation";
+import { Link } from "../../i18n/navigation";
 
 // components
-import BtnSubmit from "./ui/BtnSubmit";
-import { iconMedia } from "../data/iconMedia";
-import FormLogin from "./ui/FormLogin";
+import BtnSubmit from "../ui/BtnSubmit";
+import { iconMedia } from "../../data/iconMedia";
+import FormLogin from "../ui/FormLogin";
 
 // icon
 import { IoClose } from "react-icons/io5";
@@ -15,7 +15,10 @@ export default function ModalAuth({ close }: { close?: () => void }) {
   const [isVisible, setIsVisible] = useState(false);
   const [login, setIsLogin] = useState(false);
   const [email, setEmail] = useState("");
+  const [stepLogin, setStepLogin] = useState("");
   const authT = useTranslations("SchemaAuth");
+  const isStep =
+    stepLogin === "login" ? authT("message_login") : authT("message_verify");
 
   useEffect(() => {
     const id = requestAnimationFrame(() => {
@@ -36,7 +39,7 @@ export default function ModalAuth({ close }: { close?: () => void }) {
         className={`
           custom-scroll relative flex flex-col gap-5 justify-between bg-[#101424] w-full h-full p-4 overflow-x-hidden overflow-y-auto 
           
-          md:w-1/2 md:h-[90%] md:rounded-2xl md:px-12 md:py-8
+          md:w-1/2 md:h-auto md:max-h-[90%] md:rounded-2xl md:px-12 md:py-8
 
           2xl:w-1/3
     
@@ -173,7 +176,8 @@ export default function ModalAuth({ close }: { close?: () => void }) {
             {!login ? (
               <div className="flex flex-col items-start justify-center">
                 <FormLogin
-                  onLogin={(userEmail: string) => {
+                  onLogin={(userEmail: string, userStep: string) => {
+                    setStepLogin(userStep);
                     setEmail(userEmail);
                     setIsLogin(true);
                   }}
@@ -186,7 +190,7 @@ export default function ModalAuth({ close }: { close?: () => void }) {
         ) : (
           <div className="h-full flex flex-col items-center justify-center gap-3">
             <h1 className="z-10 text-white font-bold text-2xl mt-2 uppercase ">
-              {authT("message_verify")}
+              {isStep}
             </h1>
             <p className="text-gray-400 text-sm">{email}</p>
           </div>

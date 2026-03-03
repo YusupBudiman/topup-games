@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { User } from "../types/user";
+import { User } from "../../types/user";
 
 type Props = {
   user: User | null;

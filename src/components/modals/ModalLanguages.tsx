@@ -2,10 +2,10 @@
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useState } from "react";
-import { Languages } from "../data/languages";
-import { getLanguage } from "../i18n/locale";
+import { Languages } from "../../data/languages";
+import { getLanguage } from "../../i18n/locale";
 import { IoClose } from "react-icons/io5";
-import { useRouter, usePathname } from "../i18n/navigation";
+import { useRouter, usePathname } from "../../i18n/navigation";
 
 export default function ModalLanguages({ close }: { close?: () => void }) {
   const locale = useLocale();
