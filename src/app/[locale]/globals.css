@@ -45,9 +45,31 @@ body {
   }
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  color: white; /* ganti warna panah */
-  width: 2rem; /* lebar panah */
-  height: 2rem; /* tinggi panah */
+.custom-pagination .swiper-pagination-bullet {
+  background-color: rgb(178, 178, 178);
+  width: 4px;
+  height: 4px;
+  opacity: 1;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background-color: rgb(255, 255, 255);
+  width: 8px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+@media (min-width: 1024px) {
+  .custom-pagination .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-pagination .swiper-pagination-bullet-active {
+    background-color: rgb(255, 255, 255);
+    width: 12px;
+    border-radius: 3px;
+  }
 }
