@@ -134,7 +134,7 @@ export default function HeroSection() {
         <MdNavigateNext className="w-4 h-4 lg:w-6 lg:h-6" />
       </div>
       <div className="z-10 bg-black/70 px-2 h-4 rounded-full absolute -bottom-5 -translate-x-1/2 left-1/2 flex items-center justify-center lg:left-1/3 lg:bottom-2 ">
-        <div className="custom-pagination mb-1"></div>
+        <div className="custom-pagination"></div>
       </div>
     </div>
   );

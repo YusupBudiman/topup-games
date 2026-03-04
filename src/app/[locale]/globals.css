@@ -66,6 +66,13 @@ body {
   gap: 0.375rem; 
 } */
 
+.custom-pagination {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
 .custom-pagination .swiper-pagination-bullet {
   background-color: rgb(178, 178, 178);
   width: 4px;
