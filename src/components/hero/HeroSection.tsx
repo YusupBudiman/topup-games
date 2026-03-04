@@ -1,13 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  EffectFade,
-  Autoplay,
-} from "swiper/modules";
+import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
@@ -47,9 +41,9 @@ const sliderData = [
 
 export default function HeroSection() {
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, EffectFade, Autoplay]}
+        modules={[Navigation, Pagination, EffectFade, Autoplay]}
         spaceBetween={50}
         slidesPerView={1}
         navigation={{
@@ -139,12 +133,9 @@ export default function HeroSection() {
       >
         <MdNavigateNext className="w-4 h-4 lg:w-6 lg:h-6" />
       </div>
-      <div
-        className="
-      custom-pagination z-10 bg-black/80 px-2 py-0.75 rounded-full absolute -bottom-4 -translate-x-1/2 left-1/2 flex gap-1.5
-      lg:left-1/3 lg:bottom-2 lg:px-4 lg:py-1
-      "
-      ></div>
+      <div className="z-10 bg-black/70 px-2 h-4 rounded-full absolute -bottom-5 -translate-x-1/2 left-1/2 flex items-center justify-center lg:left-1/3 lg:bottom-2 ">
+        <div className="custom-pagination mb-1"></div>
+      </div>
     </div>
   );
 }
