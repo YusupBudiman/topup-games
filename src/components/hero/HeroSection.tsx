@@ -3,43 +3,12 @@
 import Image from "next/image";
 import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { useTranslations } from "next-intl";
+import { event } from "../../data/event";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
-// Dummy data slider
-const sliderData = [
-  {
-    id: 1,
-    image: "/hero/hero-pubg.jpeg",
-    title: "Nikmati diskon eksklusif 50% untuk pembelian pertama",
-    buttonText: "GO",
-  },
-  {
-    id: 2,
-    image: "/hero/hero-pubg.jpeg",
-    title: "Promo spesial minggu ini, jangan sampai terlewat",
-    buttonText: "GO",
-  },
-  {
-    id: 3,
-    image: "/hero/hero-pubg.jpeg",
-    title: "Dapatkan bonus item eksklusif untuk setiap top-up",
-    buttonText: "GO",
-  },
-  {
-    id: 4,
-    image: "/hero/hero-pubg.jpeg",
-    title: "Limited time offer: diskon hingga 70%",
-    buttonText: "GO",
-  },
-  {
-    id: 5,
-    image: "/hero/hero-pubg.jpeg",
-    title: "Gabung sekarang dan nikmati berbagai keuntungan",
-    buttonText: "GO",
-  },
-];
 
 export default function HeroSection() {
+  const eventT = useTranslations("ContentEvent");
   return (
     <div className="relative w-full">
       <Swiper
@@ -58,7 +27,7 @@ export default function HeroSection() {
         effect="fade"
         loop
       >
-        {sliderData.map((slide) => (
+        {event.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div className="w-full flex justify-center items-center">
               {/* Card */}
@@ -79,7 +48,7 @@ export default function HeroSection() {
                 >
                   <Image
                     src={slide.image}
-                    alt={`hero-img-${slide.id}`}
+                    alt={`event-img-${slide.id}`}
                     fill
                     sizes="100vw"
                     className="object-cover"
@@ -104,7 +73,7 @@ export default function HeroSection() {
                     lg:text-xl lg:w-full
                   "
                   >
-                    {slide.title}
+                    {eventT(`event_desc.${slide.id}`)}
                   </h1>
                   <button
                     className="
@@ -113,7 +82,7 @@ export default function HeroSection() {
                     lg:text-lg lg:px-4 
                   "
                   >
-                    {slide.buttonText}
+                    {eventT("btn_event")}
                   </button>
                 </div>
               </div>
@@ -133,7 +102,7 @@ export default function HeroSection() {
       >
         <MdNavigateNext className="w-4 h-4 lg:w-6 lg:h-6" />
       </div>
-      <div className="z-10 bg-black/70 px-2 h-4 rounded-full absolute -bottom-5 -translate-x-1/2 left-1/2 flex items-center justify-center lg:left-1/3 lg:bottom-2 ">
+      <div className="z-10 bg-black/70 px-2 h-2.5 rounded-full absolute -bottom-5 -translate-x-1/2 left-1/2 flex items-center justify-center lg:left-1/3 lg:bottom-2 lg:h-3 ">
         <div className="custom-pagination"></div>
       </div>
     </div>

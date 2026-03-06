@@ -54,28 +54,12 @@
   },
 
   "ContentEvent": {
-    "event_desc": [
-      {
-        "id": "1",
-        "title": "Nikmati diskon eksklusif 50% untuk pembelian pertama"
-      },
-      {
-        "id": "2",
-        "title": "Promo spesial minggu ini, jangan sampai terlewat"
-      },
-      {
-        "id": "3",
-        "title": "Dapatkan bonus item eksklusif untuk setiap top-up"
-      },
-      {
-        "id": 4,
-        "title": "Limited time offer: diskon hingga 70%"
-      },
-      {
-        "id": "5",
-        "title": "Gabung sekarang dan nikmati berbagai keuntungan"
-      }
-    ],
+    "event_desc": {
+      "1": "Nikmati diskon eksklusif 50% untuk pembelian pertama",
+      "2": "Promo spesial minggu ini, jangan sampai terlewat",
+      "3": "Dapatkan bonus item eksklusif untuk setiap top-up",
+      "4": "Limited time offer: diskon hingga 70%"
+    },
     "btn_event": "GO"
   }
 }

@@ -5,6 +5,7 @@
 @import "swiper/css/pagination";
 @import "swiper/css/scrollbar";
 @import "swiper/css/effect-fade";
+@import "swiper/css/grid";
 
 :root {
   --background: #14182b;
@@ -70,7 +71,6 @@ body {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  gap: 6px;
 }
 
 .custom-pagination .swiper-pagination-bullet {
